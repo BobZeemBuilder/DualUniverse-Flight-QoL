@@ -1,8 +1,8 @@
-ButtonHUD.min.lua
-ButtonHUD.wrapped.conf
-ButtonHUD.exports
-ButtonHUD.extracted.lua
-ButtonHUD.conf.version
+DU-Flight-QOL.min.lua
+DU-Flight-QOL.wrapped.conf
+DU-Flight-QOL.exports
+DU-Flight-QOL.extracted.lua
+DU-Flight-QOL.conf.version
 scripts/node_modules/**
 scripts/work/**
 src/du

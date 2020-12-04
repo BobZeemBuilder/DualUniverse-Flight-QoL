@@ -4,6 +4,9 @@ require "src.slots"
 script = {}
 
 function script.onStart ()
+
+    VERSION_NUMBER = 0.10
+
     pitchInput = 0
     rollInput = 0
     yawInput = 0
