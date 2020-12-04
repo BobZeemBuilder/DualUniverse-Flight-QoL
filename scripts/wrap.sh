@@ -26,7 +26,7 @@ WORK_DIR=${ROOTDIR}/scripts/work
 (rm -rf $WORK_DIR/* || true) && mkdir -p $WORK_DIR
 
 # Extract the exports because the minifier will eat them.
-grep "\-- \?export:" $LUA_SRC | sed -e 's/^[ \t]*/        /' -e 's/-- export:/--export:/' > $WORK_DIR/DU-Flight-QOL.exports
+    grep "\-- \?export:" $LUA_SRC | sed -e 's/^[ \t]*/        /' -e 's/-- export:/--export:/' > $WORK_DIR/DU-Flight-QOL.exports
 
 VERSION_NUMBER=`grep "VERSION_NUMBER = .*" $LUA_SRC | sed -E "s/\s*VERSION_NUMBER = (.*)/\1/"`
 if [[ "${VERSION_NUMBER}" == "" ]]; then
@@ -69,7 +69,12 @@ lua ${ROOTDIR}/scripts/wrap.lua --handle-errors --output yaml \
              --slots ${SLOTS[*]}
 
 # Re-insert the exports
-sed "/script={}/e cat $WORK_DIR/DU-Flight-QOL.exports" $WORK_DIR/DU-Flight-QOL.wrapped.conf > $CONF_DST
+if [[ "$MINIFY" == "true" ]]; then
+    sed "/script={}/e cat $WORK_DIR/DU-Flight-QOL.exports" $WORK_DIR/DU-Flight-QOL.wrapped.conf > $CONF_DST
+else
+    sed "/script = {}/e cat $WORK_DIR/DU-Flight-QOL.exports" $WORK_DIR/DU-Flight-QOL.wrapped.conf > $CONF_DST
+fi
+
 
 # Fix up minified L_TEXTs which requires a space after the comma
 sed -i -E 's/L_TEXT\(("[^"]*"),("[^"]*")\)/L_TEXT(\1, \2)/g' $CONF_DST

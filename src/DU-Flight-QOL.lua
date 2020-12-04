@@ -1,6 +1,5 @@
-require "src.slots"
+require 'src.slots'
 
--- Define a global script object with event handlers
 script = {}
 
 function script.onStart ()
