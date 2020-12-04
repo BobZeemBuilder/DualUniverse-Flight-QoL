@@ -2,11 +2,15 @@
 
 
 <!--Intro information-->
-# DU-Orbital-HUD
-## A general purpose HUD for Dual Universe
-#### Cockpits are *NOT* supported.
+# Dual Universe - Flight - Quality of Life version
+## A customizable quality of life hud
+
 ###### For assistance, see our [Discord](https://discord.gg/sRaqzmS)
 ###### Donations are accepted! We have a Donation Station in Sanctuary District 3 and more to come or you can always contact us and do a VR trade. We do not spend any time mining or building so our funds to test features are limited.
+
+ALL BELOW THIS POINT IS OUT OF DATE TILL UPDATED
+
+
 <!--TOC-->
 # Table of Contents
 | |
